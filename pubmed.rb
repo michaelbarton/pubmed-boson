@@ -2,10 +2,10 @@ require 'bio'
 
 module PubMed
 
-  # @render_options :fields => {
-  #   :default => [:PMID, :first_author, :year, :journal, :title]}
   # @options :email => :string, :number => 5, :year => :numeric,
   #  :authors => :array, :journal => :string
+  # @render_options :fields => {
+  #   :default => [:PMID, :first_author, :year, :journal, :title]}
   def query(terms,options={})
     query = String.new
     query << " #{options[:year]} [dp]" if options[:year]
