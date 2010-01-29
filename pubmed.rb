@@ -5,7 +5,7 @@ module PubMed
   # @options :email => :string, :number => 5, :year => :numeric,
   #  :authors => :array, :journal => :string
   # @render_options :fields => {
-  #   :default => [:PMID, :first_author, :year, :journal, :title]}
+  #   :default => [:PMID, :first_author, :year, :journal, :title, :url]}
   # Queries pubmed for given terms
   def query(terms,options={})
     query = String.new
@@ -19,7 +19,8 @@ module PubMed
       m = Bio::MEDLINE.new(Bio::PubMed.query(result))
       {:title        => m.title,         :year   => m.year,
        :first_author => m.authors.first, :PMID   => m.pmid,
-       :journal      => m.journal
+       :journal      => m.journal,
+       :url          => 'http://www.ncbi.nlm.nih.gov/pubmed/' + m.pmid
       }
     end
   end
