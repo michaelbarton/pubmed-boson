@@ -8,15 +8,15 @@ This is a [boson][] command for searching the [PubMed][] database of biomedical 
     > boson install http://github.com/michaelbarton/pubmed-boson/raw/master/pubmed.rb
     > boson query genome --mail="YOUR_EMAIL"
 
-    +----------+--------------+--------------+--------------+------+
-    | PMID     | first_author | journal      | title        | year |
-    +----------+--------------+--------------+--------------+------+
-    | 20077411 | Weiss, M.    | Proteomics   | Shotgun p... | 2010 |
-    | 20077410 | van Breuk... | Proteomics   | LysNDeNov... | 2010 |
-    | 20077118 | Leocard, S.  | J Math Biol  | Evolution... | 2010 |
-    | 20077036 | Collas, P.   | Mol Biote... | The Curre... | 2010 |
-    | 20076992 | Kopertekh... | Plant Mol... | Cre-media... | 2010 |
-    +----------+--------------+--------------+--------------+------+
+    +--------------+--------------+------+
+    | first_author | title        | year |
+    +--------------+--------------+------+
+    | Weiss, M.    | Shotgun p... | 2010 |
+    | van Breuk... | LysNDeNov... | 2010 |
+    | Leocard, S.  | Evolution... | 2010 |
+    | Collas, P.   | The Curre... | 2010 |
+    | Kopertekh... | Cre-media... | 2010 |
+    +--------------+--------------+------+
 
 ## Search options
 
@@ -64,13 +64,13 @@ By default the first five results are returned for each query. This can however 
     > boson query genome --number=3
     > boson query genome -n3
 
-    +----------+-------------------+-------------+-------------------+------+
-    | PMID     | first_author      | journal     | title             | year |
-    +----------+-------------------+-------------+-------------------+------+
-    | 20077411 | Weiss, M.         | Proteomics  | Shotgun proteo... | 2010 |
-    | 20077410 | van Breukelen, B. | Proteomics  | LysNDeNovo: an... | 2010 |
-    | 20077118 | Leocard, S.       | J Math Biol | Evolution of t... | 2010 |
-    +----------+-------------------+-------------+-------------------+------+
+    +-------------------+-------------------+------+
+    | first_author      | title             | year |
+    +-------------------+-------------------+------+
+    | Weiss, M.         | Shotgun proteo... | 2010 |
+    | van Breukelen, B. | LysNDeNovo: an... | 2010 |
+    | Leocard, S.       | Evolution of t... | 2010 |
+    +-------------------+-------------------+------+
 
 ### Search by author, journal, and year
 
@@ -80,13 +80,13 @@ These options allow PubMed to be queried using specific article terms such as th
     > boson query genome --journal=bioinformatics --authors=smith --year=2005
     > boson query genome -j=bioinformatics -a=smith -y2005
 
-    +----------+---------------+----------------+--------------------+------+
-    | PMID     | first_author  | journal        | title              | year |
-    +----------+---------------+----------------+--------------------+------+
-    | 16216832 | Goldovsky, L. | Bioinformatics | CoGenT++: an ex... | 2005 |
-    | 15961502 | Cheung, K. H. | Bioinformatics | YeastHub: a sem... | 2005 |
-    | 15333453 | Sumazin, P.   | Bioinformatics | DWE: discrimina... | 2005 |
-    +----------+---------------+----------------+--------------------+------+
+    +---------------+--------------------+------+
+    | first_author  | title              | year |
+    +---------------+--------------------+------+
+    | Goldovsky, L. | CoGenT++: an ex... | 2005 |
+    | Cheung, K. H. | YeastHub: a sem... | 2005 |
+    | Sumazin, P.   | DWE: discrimina... | 2005 |
+    +---------------+--------------------+------+
 
 ## Display options
 
