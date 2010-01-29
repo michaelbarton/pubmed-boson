@@ -1,6 +1,8 @@
-require 'bio'
-
 module PubMed
+
+  def self.included(mod)
+    require 'bio'
+  end
 
   # @options :email => :string, :number => 5, :year => :numeric,
   #  :authors => :array, :journal => :string
