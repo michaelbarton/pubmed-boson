@@ -6,6 +6,7 @@ module PubMed
   #  :authors => :array, :journal => :string
   # @render_options :fields => {
   #   :default => [:PMID, :first_author, :year, :journal, :title]}
+  # Queries pubmed for given terms
   def query(terms,options={})
     query = String.new
     query << " #{options[:year]} [dp]" if options[:year]
