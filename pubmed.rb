@@ -10,6 +10,7 @@ module PubMed
   #   :default => [:first_author, :year, :title],
   #   :values  => [:PMID, :first_author, :year, :journal, :title, :url],
   #   }
+  # @config :menu => {:command => 'browser', :default_field => :url}
   # @desc Queries pubmed for given terms
   def query(terms,options={})
     query = String.new

@@ -5,6 +5,7 @@ This is a [boson][] command for searching the [PubMed][] database of biomedical 
 ## Quick start
 
     > gem install boson bio
+    > boson install http://github.com/cldwalker/irbfiles/raw/master/boson/commands/public/plugins/menu_pipe.rb --default
     > boson install http://github.com/michaelbarton/pubmed-boson/raw/master/pubmed.rb
     > boson query genome --mail="YOUR_EMAIL"
 
@@ -88,6 +89,28 @@ These options allow PubMed to be queried using specific article terms such as th
     | Sumazin, P.   | DWE: discrimina... | 2005 |
     +---------------+--------------------+------+
 
+## Jump to pubmed entry
+
+The [menu_pipe][] plugin for boson allows fields to be passed to other boson commands. This means an entry can be opened in the browser - currently only works on OSX though.
+
+    # The global menu flag option -m is added after everything else
+    > boson query genome -j=bioinformatics -a=smith -y2005 - -m
+
+    +---------------+--------------------+------+
+    | first_author  | title              | year |
+    +---------------+--------------------+------+
+    | Goldovsky, L. | CoGenT++: an ex... | 2005 |
+    | Cheung, K. H. | YeastHub: a sem... | 2005 |
+    | Sumazin, P.   | DWE: discrimina... | 2005 |
+    +---------------+--------------------+------+
+    3 rows in set
+    Specify individual choices (4,7), range of choices (1-3) or all choices (*).
+    : urllt field 
+    Default command: browser
+    Choose: 1
+
+    # This pubmed entry is then opened in the browser
+    
 ## Display options
 
 Boson has tools for sorting and displaying fields already baked in. This allows only only a subset of fields to be displayed, for example:
@@ -131,3 +154,4 @@ This is only a few lines of code that builds upon the excellent [boson] tool by 
 [PubMed]: http://www.ncbi.nlm.nih.gov/pubmed/
 [github repository]: http://github.com/michaelbarton/pubmed-boson
 [github issues]: http://github.com/michaelbarton/pubmed-boson/issues
+[menu_pipe]: http://tagaholic.me/2010/02/16/two-dimensional-console-menus-with-hirb.html#chaining_apis
