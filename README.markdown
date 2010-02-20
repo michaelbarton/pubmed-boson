@@ -7,7 +7,7 @@ This is a [boson][] command for searching the [PubMed][] database of biomedical 
     > gem install boson bio
     > boson install http://github.com/cldwalker/irbfiles/raw/master/boson/commands/public/plugins/menu_pipe.rb --default
     > boson install http://github.com/michaelbarton/pubmed-boson/raw/master/pubmed.rb
-    > boson query genome --mail="YOUR_EMAIL"
+    > boson query -t genome --mail="YOUR_EMAIL"
 
     +--------------+--------------+------+
     | first_author | title        | year |
@@ -51,10 +51,10 @@ NCBI requires that all programmatic queries to the API provide an email address 
 Which allows
 
     # This ...
-    > boson query genome --email="YOUR_EMAIL"
+    > boson query -t genome --email="YOUR_EMAIL"
 
     # ... to be written more concisely as this.
-    > boson query genome
+    > boson query -t genome
 
 ### Number of results
 
@@ -62,8 +62,8 @@ By default the first five results are returned for each query. This can however 
 
     # These commands both return the same result.
     # The second uses the shorter option alias
-    > boson query genome --number=3
-    > boson query genome -n3
+    > boson query -terms genome --number=3
+    > boson query -t genome -n3
 
     +-------------------+-------------------+------+
     | first_author      | title             | year |
@@ -78,8 +78,8 @@ By default the first five results are returned for each query. This can however 
 These options allow PubMed to be queried using specific article terms such as the names of authors, year published, or the journal in which it was published. Terms can be used individually or combined into larger queries.
 
     # These two commands are the same
-    > boson query genome --journal=bioinformatics --authors=smith --year=2005
-    > boson query genome -j=bioinformatics -a=smith -y2005
+    > boson query -terms genome --journal=bioinformatics --authors=smith --year=2005
+    > boson query -t genome -j=bioinformatics -a=smith -y2005
 
     +---------------+--------------------+------+
     | first_author  | title              | year |
@@ -94,7 +94,7 @@ These options allow PubMed to be queried using specific article terms such as th
 The [menu_pipe][] plugin for boson allows fields to be passed to other boson commands. This means an entry can be opened in the browser - currently only works on OSX though.
 
     # The global menu flag option -m is added after everything else
-    > boson query genome -j=bioinformatics -a=smith -y2005 - -m
+    > boson query -t genome -j=bioinformatics -a=smith -y2005 - -m
 
     +---------------+--------------------+------+
     | first_author  | title              | year |
@@ -115,8 +115,8 @@ The [menu_pipe][] plugin for boson allows fields to be passed to other boson com
 
 Boson has tools for sorting and displaying fields already baked in. This allows only only a subset of fields to be displayed, for example:
 
-    > boson query genome --fields=PMID,title
-    > boson query genome -f=P,t
+    > boson query -t genome --fields=PMID,title
+    > boson query -t genome -f=P,t
     +----------+----------------------------------------------------------------+
     | PMID     | title                                                          |
     +----------+----------------------------------------------------------------+
@@ -129,8 +129,8 @@ Boson has tools for sorting and displaying fields already baked in. This allows 
 
 Or for the returned results to be displayed vertically and sorted by first author name:
 
-    boson query genome --fields=PMID,first_author,year --vertical --sort=first_author
-    boson query genome -f=P,f,y -V -s=f
+    boson query -t genome --fields=PMID,first_author,year --vertical --sort=first_author
+    boson query -t genome -f=P,f,y -V -s=f
     ****************** 1. row ******************
             PMID: 20077036
     first_author: Collas, P.
