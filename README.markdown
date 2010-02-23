@@ -7,7 +7,7 @@ This is a [boson][] command for searching the [PubMed][] database of biomedical 
     > gem install boson bio
     > boson install http://github.com/cldwalker/irbfiles/raw/master/boson/commands/public/plugins/menu_pipe.rb --default
     > boson install http://github.com/michaelbarton/pubmed-boson/raw/master/pubmed.rb
-    > boson query -t genome --mail="YOUR_EMAIL"
+    > boson query -t genome --email="YOUR_EMAIL"
 
     +--------------+--------------+------+
     | first_author | title        | year |
