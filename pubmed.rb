@@ -1,3 +1,4 @@
+# Originally from http://github.com/michaelbarton/pubmed-boson/raw/master/pubmed.rb
 module PubMed
 
   def self.included(mod)
@@ -5,7 +6,7 @@ module PubMed
   end
 
   # @options :email => :string, :number => 5, :year => :numeric,
-  #  :authors => :array, :journal => :string, :terms => string
+  #  :authors => :array, :journal => :string, :terms => :string
   # @render_options :fields => {
   #   :default => [:first_author, :year, :title],
   #   :values  => [:PMID, :first_author, :year, :journal, :title, :url],
