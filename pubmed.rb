@@ -6,7 +6,8 @@ module PubMed
   end
 
   # @options :email => :string, :number => 5, :year => :numeric,
-  #  :authors => :array, :journal => :string, :terms => :string
+  #  :authors => :array, :journal => :string, :terms => :string,
+  #  :first_author => :string, :last_author => :string
   # @render_options :fields => {
   #   :default => [:first_author, :year, :title],
   #   :values  => [:PMID, :first_author, :year, :journal, :title, :url],
@@ -17,6 +18,8 @@ module PubMed
     query = String.new
     query << " #{options[:year]} [dp]" if options[:year]
     query << " #{options[:journal]} [ta]" if options[:journal]
+    query << " #{options[:first_author]} [1AU]" if options[:first_author]
+    query << " #{options[:last_author]} [LASTAU]" if options[:last_author]
     options[:authors].each{|a| query << " #{a} [au]"} if options[:authors]
     query << " #{options[:terms]}" if options[:terms]
 
