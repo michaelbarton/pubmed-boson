@@ -5,8 +5,8 @@ This is a [boson][] command for searching the [PubMed][] database of biomedical 
 ## Quick start
 
     > gem install boson bio
-    > boson install http://github.com/cldwalker/irbfiles/raw/master/boson/commands/public/plugins/menu_pipe.rb --default
-    > boson install http://github.com/michaelbarton/pubmed-boson/raw/master/pubmed.rb
+    > boson install https://raw.github.com/cldwalker/irbfiles/master/boson/commands/public/plugins/menu_pipe.rb --default
+    > boson install https://raw.github.com/michaelbarton/pubmed-boson/master/pubmed.rb
     > boson query -t genome --email="YOUR_EMAIL"
 
     +--------------+--------------+------+
